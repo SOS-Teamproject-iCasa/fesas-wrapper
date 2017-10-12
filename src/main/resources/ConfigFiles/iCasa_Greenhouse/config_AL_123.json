@@ -1,0 +1,267 @@
+{
+	"DEVICE_PROPERTIES": [
+		{
+			"TYPE": "device_id",
+			"VALUE": "fesasID-123_0_000"
+		},{
+			"TYPE": "device_name", 
+			"VALUE": "Device1"
+		}
+	],
+	"AL_ADAPTATIONLOGIC": [
+		{
+		"AL_ELEMENT": {
+			"AL_TYPE": "SENSOR",
+			"AL_ID": "fesasID-123_1_007",
+			"AL_NAME": "1Var_sensor",
+			"AL_LOGIC": [
+				{
+					"LOGIC_TYPE":"SENSOR",
+					"PROGRAMMING_LANGUAGE":"Java",
+					"INFORMATION_TYPE":"Sensor_DEFAULT",
+					"SUPPORTED_INFORMATION_TYPES": ["Probe_SIMPLE_MANAGED_RESOURCES"],
+					"CONTRACT_PROPERTIES": [
+						{
+							"VALUE":"ICasaSensor",
+							"UTILITY":0.75,
+							"KEY":"SHORT_NAME"
+						}
+					]
+				}
+			],
+			"AL_PROPERTIES" : [
+				{
+					"KEY":"INPUT_COMMUNICATION",
+					"VALUE":"CLIENT_SOCKET"
+				},
+				{
+					"KEY":"OUTPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				},
+				{
+					"KEY":"PORT",
+					"VALUE":"22222"
+				},
+				{
+					"KEY":"IP",
+					"VALUE":"127.0.0.1"
+				},
+				{
+					"KEY":"SENSING_PERIOD",
+					"VALUE":"1000"
+				},
+				{
+					"KEY":"USE_SENSING",
+					"VALUE":"false"
+				},
+				{
+					"KEY":"CLOSE_AFTER_NO_OF_RECONNECTS",
+					"VALUE":"3"
+				}
+			]
+			} 
+		},
+		{
+		"AL_ELEMENT": {
+			"AL_TYPE": "MONITOR",
+			"AL_ID": "fesasID-123_1_001",
+			"AL_NAME": "1Var_monitor",
+			"AL_LOGIC": [
+				{
+					"LOGIC_TYPE":"MONITOR",
+					"PROGRAMMING_LANGUAGE":"Java",
+					"INFORMATION_TYPE": "Monitoring_DEFAULT",
+					"SUPPORTED_INFORMATION_TYPES": ["Sensor_DEFAULT"],
+					"CONTRACT_PROPERTIES": [
+						{
+							"VALUE":"Monitor",
+							"UTILITY":0.75,
+							"KEY":"SHORT_NAME"
+						}
+					]
+				}
+			],
+			"AL_PROPERTIES" : [
+				{
+					"KEY":"INPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				},
+				{
+					"KEY":"OUTPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				}
+			]
+			} 
+		},
+		
+		{
+		"AL_ELEMENT": {
+			"AL_TYPE": "ANALYZER",
+			"AL_ID": "fesasID-123_1_002",
+			"AL_NAME": "1Var_analyzer",
+			"AL_LOGIC": [
+				{
+					"LOGIC_TYPE":"ANALYZER",
+					"PROGRAMMING_LANGUAGE":"Java",
+					"INFORMATION_TYPE": "Analyzing_DEFAULT",
+					"SUPPORTED_INFORMATION_TYPES": ["Monitoring_DEFAULT"],
+					"CONTRACT_PROPERTIES": [
+						{
+							"VALUE":"Analyzer",
+							"UTILITY":0.75,
+							"KEY":"SHORT_NAME"
+						}
+					]
+				}
+			],
+			"AL_PROPERTIES": [
+				{
+					"KEY":"INPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				},
+				{
+					"KEY":"OUTPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				}
+			]
+			} 
+		},
+		
+		{	
+		"AL_ELEMENT": {
+			"AL_TYPE": "PLANNER",
+			"AL_ID": "fesasID-123_1_003",
+			"AL_NAME": "1Var_planner",
+			"AL_LOGIC": [
+				{
+					"LOGIC_TYPE":"PLANNER",
+					"PROGRAMMING_LANGUAGE":"Java",
+					"INFORMATION_TYPE": "Planning_DEFAULT",
+					"SUPPORTED_INFORMATION_TYPES": ["Analyzing_DEFAULT"],
+					"CONTRACT_PROPERTIES": [
+						{
+							"VALUE":"Planner",
+							"UTILITY":0.75,
+							"KEY":"SHORT_NAME"
+						}
+					]
+				}
+			],
+			"AL_PROPERTIES" : [
+				{
+					"KEY":"INPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				},
+				{
+					"KEY":"OUTPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				}
+			]
+			} 
+		},
+		
+		{
+		"AL_ELEMENT": {
+			"AL_TYPE": "EXECUTOR",
+			"AL_ID": "fesasID-123_1_004",
+			"AL_NAME": "1Var_Executor",
+			"AL_LOGIC": [
+				{
+					"LOGIC_TYPE":"EXECUTOR",
+					"PROGRAMMING_LANGUAGE":"Java",
+					"INFORMATION_TYPE": "Executing_DEFAULT",
+		"SUPPORTED_INFORMATION_TYPES": ["Planning_DEFAULT"],
+					"CONTRACT_PROPERTIES": [
+						{
+							"VALUE":"Executor",
+							"UTILITY":0.75,
+							"KEY":"SHORT_NAME"
+						}
+					]
+				}
+			],
+			"AL_PROPERTIES" : [
+				{
+					"KEY":"INPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				},
+				{
+					"KEY":"OUTPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				}
+			]
+			}
+		},
+		{
+		"AL_ELEMENT": {
+			"AL_TYPE": "EFFECTOR",
+			"AL_ID": "fesasID-123_1_008",
+			"AL_NAME": "1Var_effector",
+			"AL_LOGIC": [
+				{
+					"LOGIC_TYPE":"EFFECTOR",
+					"PROGRAMMING_LANGUAGE":"Java",
+					"INFORMATION_TYPE":"Effector_DEFAULT",
+					"SUPPORTED_INFORMATION_TYPES": ["Executing_DEFAULT"],
+					"CONTRACT_PROPERTIES": [
+						{
+							"VALUE":"ICasaEffector",
+							"UTILITY":0.75,
+							"KEY":"SHORT_NAME"
+						}
+					]
+				}
+			],
+			"AL_PROPERTIES" : [
+				{
+					"KEY":"INPUT_COMMUNICATION",
+					"VALUE":"PUBSUB"
+				},
+				{
+					"KEY":"OUTPUT_COMMUNICATION",
+					"VALUE":"CLIENT_SOCKET"
+				},
+				{
+					"KEY":"PORT",
+					"VALUE":"33333"
+				},
+				{
+					"KEY":"IP",
+					"VALUE":"127.0.0.1"
+				}
+			]
+			} 
+		},
+		
+		{		
+		"AL_ELEMENT": {
+			"AL_TYPE": "KNOWLEDGE",
+			"AL_ID": "fesasID-123_1_006",
+			"AL_NAME": "1Var_Knowledge",
+			"AL_LOGIC" : [
+				{
+					"LOGIC_TYPE":"KNOWLEDGE",
+					"PROGRAMMING_LANGUAGE":"Java",
+					"INFORMATION_TYPE": "Knowledge_SIMPLESAS",
+		"SUPPORTED_INFORMATION_TYPES": [],
+					"CONTRACT_PROPERTIES": [
+						{
+							"VALUE":"KnowledgeLogicWithHashMap",
+							"UTILITY":0.75,
+							"KEY":"SHORT_NAME"
+						}
+					]
+				}
+			],
+			"AL_PROPERTIES" : [
+				{
+					"KEY":"port",
+					"VALUE":"12345"
+				}
+			]
+			}
+		}
+		
+		
+	]
+}
